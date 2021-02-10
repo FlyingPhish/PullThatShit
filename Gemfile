@@ -11,3 +11,4 @@ group :dev do
   gem 'rubocop'
   gem 'solargraph'
 end
+
