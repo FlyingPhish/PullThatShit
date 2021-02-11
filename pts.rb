@@ -13,7 +13,7 @@ class DownloaderAndPulla
   include FileParser
 
   # Variables 'n Such
-  @user_agent = '"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"'
+  @@user_agent = '"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"'
   attr_reader :file_type_group, :user_file, :fresh_start
 
   def initialize(user_file, file_type_group, fresh_start)
@@ -31,7 +31,7 @@ class DownloaderAndPulla
     puts ''; puts "Getting the shit and putting it in 'downloads' folder:"
 
     # Running wget & Handling/Hiding Ugly Errors
-    if @cmd.run!("wget -i #{@user_file} -c -nv --wait 2 --random-wait --no-http-keep-alive --user-agent=#{@user_agent} -P downloads/").failure?
+    if @cmd.run!("wget -i #{@user_file} -c -nv --wait 2 --random-wait --no-http-keep-alive --user-agent=#{@@user_agent} -P downloads/").failure?
       print 'Finished w/ some'.colorize(:green); puts ' errors.'.colorize(:red); puts
     end
 
