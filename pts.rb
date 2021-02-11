@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # Requires
 require 'tty-prompt'
 require 'tty-command'
