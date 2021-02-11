@@ -1,16 +1,5 @@
 ## PullThatShit (PTS)
 
-██▓███   █    ██  ██▓     ██▓       ▄▄▄█████▓ ██░ ██  ▄▄▄      ▄▄▄█████▓     ██████  ██░ ██  ██▓▄▄▄█████▓
-▓██░  ██▒ ██  ▓██▒▓██▒    ▓██▒       ▓  ██▒ ▓▒▓██░ ██▒▒████▄    ▓  ██▒ ▓▒   ▒██    ▒ ▓██░ ██▒▓██▒▓  ██▒ ▓▒
-▓██░ ██▓▒▓██  ▒██░▒██░    ▒██░       ▒ ▓██░ ▒░▒██▀▀██░▒██  ▀█▄  ▒ ▓██░ ▒░   ░ ▓██▄   ▒██▀▀██░▒██▒▒ ▓██░ ▒░
-▒██▄█▓▒ ▒▓▓█  ░██░▒██░    ▒██░       ░ ▓██▓ ░ ░▓█ ░██ ░██▄▄▄▄██ ░ ▓██▓ ░      ▒   ██▒░▓█ ░██ ░██░░ ▓██▓ ░ 
-▒██▒ ░  ░▒▒█████▓ ░██████▒░██████▒     ▒██▒ ░ ░▓█▒░██▓ ▓█   ▓██▒  ▒██▒ ░    ▒██████▒▒░▓█▒░██▓░██░  ▒██▒ ░ 
-▒▓▒░ ░  ░░▒▓▒ ▒ ▒ ░ ▒░▓  ░░ ▒░▓  ░     ▒ ░░    ▒ ░░▒░▒ ▒▒   ▓▒█░  ▒ ░░      ▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒░▓    ▒ ░░   
-░▒ ░     ░░▒░ ░ ░ ░ ░ ▒  ░░ ░ ▒  ░       ░     ▒ ░▒░ ░  ▒   ▒▒ ░    ░       ░ ░▒  ░ ░ ▒ ░▒░ ░ ▒ ░    ░    
-░░        ░░░ ░ ░   ░ ░     ░ ░        ░       ░  ░░ ░  ░   ▒     ░         ░  ░  ░   ░  ░░ ░ ▒ ░  ░      
-            ░         ░  ░    ░  ░             ░  ░  ░      ░  ░                  ░   ░  ░  ░ ░           
-By @FlyingPhishy
-
 PTS is a Ruby script (written by a n00b) to help semi/fully automate document downloading + metadata scraping. You pass it a file with URLs that contain pngs, pdfs etc and it'll download (or attempt to download) resources for those URLs. Once downloaded it'll run exiftool and save the results to the 'results' folder. The next update will allow you to pass it a Logger++ Burp JSON file and it'll parse the URLS for you. Meaning you could do a web app test or OSINT with Burp's Proxy, and then pull that shit.
 
 Version 1.0 is the current version.
