@@ -13,7 +13,9 @@ Add document group selection so you can only chose to download image filetypes.
 Add feature to highlight interesting metadata in files and print them out on the screen.
 
 Potentially -
+
 Allow user to set User agent, timeout, wait and redirect properties.
+
 Auth support for base urls.
 
 ## Advisory
