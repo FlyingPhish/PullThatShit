@@ -7,7 +7,9 @@ Version 1.0 is the current version.
 ## Upcoming Updates
 
 Add support for Logger++ JSON files + add feature for parsing said filetype.
+
 Add document group selection so you can only chose to download image filetypes.
+
 Add feature to highlight interesting metadata in files and print them out on the screen.
 
 Potentially -
