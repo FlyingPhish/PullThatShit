@@ -31,7 +31,7 @@ class DownloaderAndPulla
     puts ''; puts "Getting the shit and putting it in 'downloads' folder:"
 
     # Running wget & Handling/Hiding Ugly Errors
-    if @cmd.run!("wget -i #{@user_file} -c -nv --wait 2 --random-wait --no-http-keep-alive --user-agent=#{@@user_agent} -P downloads/").failure?
+    if @cmd.run!("wget -i #{@user_file} -nv --wait 2 --random-wait --no-http-keep-alive --user-agent=#{@@user_agent} -P downloads/").failure?
       print 'Finished w/ some'.colorize(:green); puts ' errors.'.colorize(:red); puts
     end
 
