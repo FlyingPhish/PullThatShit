@@ -1,14 +1,16 @@
 ## PullThatShit (PTS)
 
-PTS is a Ruby script (written by a n00b) to help semi/fully automate document downloading + metadata scraping. You pass it a file with URLs that contain pngs, pdfs etc and it'll download (or attempt to download) resources for those URLs. Once downloaded it'll run exiftool and save the results to the 'results' folder. The next update will allow you to pass it a Logger++ Burp JSON file and it'll parse the URLS for you. Meaning you could do a web app test or OSINT with Burp's Proxy, and then pull that shit.
+PTS is a Ruby script (written by a n00b) to help semi/fully automate document downloading + metadata scraping. You pass it a file that contains pngs, pdfs, docs etc and it'll download (or attempt to download) resources from those URLs. Once downloaded it'll run exiftool and save the results to the 'results' folder.  This tool currently supports .txt files with URLs on new lines or Logger++ .json files (Burp Extension). Once the file is specified you can choose a few options like removing previous results/downloads and selecting what filetype group you want to grab (pictures, documents or all). This will then go through the target file, pull the relevant file extensions and load it into the tool.
 
-Version 1.0 is the current version.
+This tool was created so you could automate grabbing metadata from a Web App pentest you've conducted, or if you've been snooping around (OSINT) and you've either got a list of URLs or you've been running your traffic via Burp.
+
+Version 1.5 is the current version.
 
 ## Upcoming Updates
 
-Add support for Logger++ JSON files + add feature for parsing said filetype.
+-Add support for Logger++ JSON files + add feature for parsing said filetype.-
 
-Add document group selection so you can only chose to download image filetypes.
+-Add document group selection so you can only chose to download image filetypes.-
 
 Add feature to highlight interesting metadata in files and print them out on the screen.
 

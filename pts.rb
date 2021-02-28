@@ -14,8 +14,10 @@ class DownloaderAndPulla
 
   # Variables 'n Such
   @@user_agent = '"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"'
-  attr_reader :file_type_group, :user_file, :fresh_start
+  @@error_msg = 'Fuck, nothing to do as the folder is empty...'
+  attr_reader :file_type_group, :user_file, :fresh_start, :inscope_file
 
+  # Self Explanatory
   def initialize(user_file, file_type_group, fresh_start)
     @user_file = user_file
     @file_type_group = file_type_group
@@ -25,22 +27,23 @@ class DownloaderAndPulla
     clean_folder if @fresh_start == true
   end
 
+  # Download Functionality
   def wget_download
+    # Run This Method To Grab Target Filetypes
+    select_file_type
+
     # Initiate TTY Command
     @cmd = TTY::Command.new(printer: :pretty)
     puts ''; puts "Getting the shit and putting it in 'downloads' folder:"
 
     # Running wget & Handling/Hiding Ugly Errors
     if @cmd.run!("wget -i #{@user_file} -nv --wait 2 --random-wait --no-http-keep-alive --user-agent=#{@@user_agent} -P downloads/").failure?
-      print 'Finished w/ some'.colorize(:green); puts ' errors.'.colorize(:red); puts
+      print 'Finished w/ some'.colorize(:green); print ' errors'.colorize(:red); puts ' but it could be a false positive. Check the output for any wget errors.'.colorize(:green);
     end
 
-    # Run Next Bit if POPULATED
-    if Dir.empty?('downloads') == false
-      exiftool_start
-    else
-      abort('Fuck, nothing to do as the folder is empty...')
-    end
+    # Abort If Empty, Otherwise Carry On
+    abort(@@error_msg) if Dir.empty?('downloads') == true
+    exiftool_start
   end
 
   # Run exiftool
@@ -63,11 +66,13 @@ puts "
             ░         ░  ░    ░  ░             ░  ░  ░      ░  ░                  ░   ░  ░  ░ ░           
 
 By @FlyingPhishy
+
+Version 1.5
 "; puts
 
 # USER INPUT SECTION / CHECK IF USER ARG HAS BEEN SUBMITTED
 if ARGV[0].nil?
-  abort('Error: Specify filename with script. Currently accepts a parsed .txt or a Logger++ JSON (JSON in progress atm)')
+  abort('Error: Specify filename with script. Currently accepts a parsed .txt or a Logger++ JSON')
 else
   # CHECK IF EXISTS
   abort('Error: File not found. Specify a REAL file.') if File.exist?(ARGV[0]) == false
@@ -75,10 +80,7 @@ else
   # Initiate Prompt
   prompt = TTY::Prompt.new(active_color: :bright_yellow, interrupt: :exit)
   fresh_start = prompt.yes?('Do you want to clear the downloads folder?')
-
-  # NEXT FEATURE SO JUST HAVE TO PASS MEANINGLESS ARG
-  # wanted_file_group = prompt.select('Filetype Group Wanted?:', %w[images documents all])
-  wanted_file_group = 'coming soon'
+  wanted_file_group = prompt.select('Filetype Group Wanted?:', %w[images documents all])
 
   # Start the Script
   start_script = DownloaderAndPulla.new(ARGV[0], wanted_file_group, fresh_start)
@@ -89,7 +91,8 @@ case ARGV[0].downcase
 when /.txt/
   start_script.wget_download
 when /.json/
-  # start_script.
+  start_script.parse_json
+  start_script.wget_download
 else
   puts "Summat's gone wrong 'ere"
 end
