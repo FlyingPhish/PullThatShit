@@ -50,6 +50,7 @@ class DownloaderAndPulla
   def exiftool_start
     puts ; puts 'Running exiftool on your downlaods folder:'
     @cmd.run!("exiftool #{@@exif_directory}/* > #{@@exif_directory}/../results/results.txt")
+    read_stats
   end
 end
 

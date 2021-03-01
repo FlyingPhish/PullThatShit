@@ -6,6 +6,12 @@ This tool was created so you could automate grabbing metadata from a Web App pen
 
 Version 1.5 is the current version.
 
+## Usage
+
+./pts targetfile.txt
+OR
+./pts targetjsonfile.json
+
 ## Upcoming Updates
 
 Add support for Logger++ JSON files + add feature for parsing said filetype. - DONE

@@ -65,4 +65,11 @@ module FileParser
     # Reassigned Variable
     @user_file = 'final_targets_' + @file_type_group + '.txt'
   end
+
+  def read_stats
+    # Keywords To Count
+    interesting_values = 'Author|Producer|Creator|Creator Tool|XMP Toolkit|GPS|Software|Comments'
+    puts ; puts 'Interesting Results (Small Sample):'
+    system("grep -E '#{interesting_values}' results/results.txt")
+  end
 end
