@@ -68,7 +68,7 @@ puts "
 
 By @FlyingPhishy
 
-Version 1.5
+Version 2.0
 "; puts
 
 # USER INPUT SECTION / CHECK IF USER ARG HAS BEEN SUBMITTED

@@ -6,7 +6,7 @@ This tool currently supports .txt files with URLs on new lines or Logger++ .json
 
 This tool was created so you could automate grabbing metadata from a Web App pentest you've conducted, or if you've been snooping around (OSINT) and you've either got a list of URLs or you've been running your traffic via Burp.
 
-Version 1.5 is the current version.
+Version 2.0 is the current version.
 
 ## Usage
 
