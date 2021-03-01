@@ -20,7 +20,7 @@ Add support for Logger++ JSON files + add feature for parsing said filetype. - D
 
 Add document group selection so you can only chose to download image filetypes. - DONE
 
-Add feature to highlight interesting metadata in files and print them out on the screen.
+Add feature to highlight interesting metadata in files and print them out on the screen. - DONE (sample the results)
 
 Potentially -
 
