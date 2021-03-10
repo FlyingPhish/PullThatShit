@@ -14,19 +14,21 @@ Version 2.0 is the current version.
 OR
 ./pts targetjsonfile.json
 
+![image](https://user-images.githubusercontent.com/46652779/110665917-bc6e9600-81c0-11eb-8102-56705803859c.png)
+
+
 ## Upcoming Updates
 
-Add support for Logger++ JSON files + add feature for parsing said filetype. - DONE
+~~Add support for Logger++ JSON files + add feature for parsing said filetype.~~
 
-Add document group selection so you can only chose to download image filetypes. - DONE
+~~Add document group selection so you can only chose to download image filetypes.~~
 
-Add feature to highlight interesting metadata in files and print them out on the screen. - DONE (sample the results)
+~~Add feature to highlight interesting metadata in files and print them out on the screen.~~
 
-Potentially -
+Potentially:
 
 Allow user to set User agent, timeout, wait and redirect properties.
 
-Auth support for base urls.
 
 ## Advisory
 
